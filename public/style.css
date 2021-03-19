@@ -1,5 +1,144 @@
+
+/* global edits & Text sizing */
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.header-text {
+    font-size: 32px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.subhead-text{
+    font-size: 19px;
+    font-weight: 400;
+}
+
+/* Nav and Nav btn */
+
+.nav-btn {
+    width: 0; 
+    height: 0; 
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-left: 25px solid #fff;
+    position: absolute;
+    z-index: 20;
+    top: 50%;
+    left: 100%;
+    transform:translateY(-50%);
+    transition: all .3s ease;
+}
+
+.nav-active-btn {
+    transform: rotate(180deg);
+    border-left: 32px solid #000;
+    transition: all .3s ease;
+    position: absolute;
+    left: 90%;
+}
+
+.nav-container {
+    width: 80%;
+    height: 100vh;
+    background: #fff;
+    z-index: 15;
+    position: absolute;
+    left: -80%;
+    transition: all .3s ease;
+}
+
+.nav-open{
+    left: 0%;
+    transition: all .3s ease;
+    overflow: hidden;
+}
+
+.nav-header {
+    margin: 32px 0 0 32px;
+    text-align: left;
+}
+
+.nav-list-con {
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+}
+
+.nav-list-con ul {
+    list-style: none;
+}
+
+.nav-list-con ul li {
+    padding-top: 19px ;
+}
+
+/* Home Page */
+
+#home-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-img-con {
+    position: absolute;
+    width: 120vw;
+    height: 120vh;
+    overflow: hidden;
+    top: -20vh;
+    left: -20vw;
+    pointer-events: none;
+}
+
+.hero-vid {
+   height: 100%;
+    object-fit: cover;
+    object-position: right;
+    z-index: -10;
+}
+
+.vid-overlay{
+    width: 300vw;
+    height: 30vh;
+    background: #fff;
+    position: absolute;
+    z-index: 10;
+    bottom: 0; 
+    left: -50vw;
+    transform: rotate(-5deg);
+}
+
+.home-text-con {
+    position: absolute;
+    bottom: 32px;
+    z-index: 10;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.cta-btn-md {
+    
+    background: none;
+    outline: none;
+    padding: 5px 19px;
+    margin: 19px;
+    border-radius: 34px;
+}
+
+/* Our Work Page */
+
+#ourWork-container {
+    width: 100%;
+    height: 100%;
+    background: red;
 }

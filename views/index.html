@@ -2,23 +2,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
     <title>Document</title>
 </head>
-    <body>
+    <body>  
+
+       
+
+        <div class="nav-container">
+            <div id="navBtn" class="nav-btn"></div>
+            <h2 class="header-text nav-header">20–WDWU–07</h2>
+            <div class="nav-list-con">
+                <ul class="nav-list">
+                  <li id="ourWork" class="subhead-text">Our Work</li>
+                  <li id="homePage" class="subhead-text">Home</li>
+                  <li class="subhead-text">Upload your Work</li>
+                  <li class="subhead-text">Login or Signup</li>
+                  
+                </ul>
+            </div>
+        </div>
+
 
         <div id="home-container">
 
             <div class="hero-img-con">
-                <video src="../video/hero-vid.mp4" class="hero-vid"></video>
+                <video src="../video/hero-vid.mp4" autoplay muted loop controls="off" class="hero-vid"></video>
             </div>
 
-            <h1 class="Header-text">20–WDWU–07</h1>
-
-            <button class="cta-btn-md">View our Work!</button>
             
+
+            <div class="vid-overlay"></div>
+
+            <div class="home-text-con">
+                <h1 class="Header-text">20–WDWU–07</h1>
+                <button id="homeCta"class="cta-btn-md Subhead-text">View our Work!</button>
+            </div>
 
         </div>
 
+        <div id="ourWork-container">
+            
+        </div>
 
 
 
@@ -86,6 +114,9 @@
             <input class="submit-btn" type="submit" id="submit-btn" value="POST">
     
         </form> -->
-
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"> </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="../script.js"></script>
     </body>
 </html>

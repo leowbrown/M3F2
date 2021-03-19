@@ -7,9 +7,9 @@ const bodyParser =  require("body-parser");
 const User = require("./models/user");
 const Post = require("./models/post");
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/js'));
 //we're setting up the strategy to provide security
 const LocalStrategy =  require("passport-local");
-
 
 const passportLocalMongoose =  require("passport-local-mongoose"); ////simplifies the integration between Mongoose and Passport for local authentication
 const twig = require('twig');
@@ -127,3 +127,5 @@ app.get("/logout",(req,res)=>{  // logout function
     req.logout();
     res.redirect("/");
 });
+
+
