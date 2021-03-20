@@ -38,14 +38,51 @@
             <div class="vid-overlay"></div>
 
             <div class="home-text-con">
-                <h1 class="Header-text">20–WDWU–07</h1>
+                <h1 class="header-text">20–WDWU–07</h1>
                 <button id="homeCta"class="cta-btn-md Subhead-text">View our Work!</button>
             </div>
 
         </div>
 
         <div id="ourWork-container">
+
             
+            <h2 class="ourWork-header header-text">20–WDWU–07</h2>
+            <h3 class="ourWork-subhead subhead-text">Share your Work!</h3>
+            <div class="ourWork-form-con">
+                <form action="" method="POST">
+                        
+                    <div class="form-group">
+                        <label for="author_name" class="form-label subhead-text">Header Image</label>
+                        <input type="text" class="form-input bodycopy-text" name="image_link" placeholder="https://images.pexels.com/photos/1983917/....." id="image_link" required>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="author_name" class="form-labe subhead-text">Name</label>
+                        <input type="text" class="form-input bodycopy-text" name="author" placeholder="John Smith" id="author_name" required>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="post_portfolio" class="form-label subhead-text">Portolio link</label>
+                        <input type="text" class="form-input bodycopy-text" name="portfolio" placeholder="https://www.behance.net/JohnSmith" id="post_portfolio" required>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="post_Contact" class="form-label subhead-text">Contact</label>
+                        <input type="text" class="form-input bodycopy-text" name="contact" placeholder="JohnSmith@gmail.com" id="post_" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="post_content" class="form-label subhead-text">Tell us about the Project</label>
+                        <textarea name="content" class="form-input bodycopy-text" id="post_content" placeholder="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium doloribus quae quibusdam." cols="30" rows="10"></textarea>
+                    </div>
+                    <input class="submit-btn subhead-text" type="submit" id="submit-btn" value="Submit">
+            
+                </form>
+            </div>
+            <div class="form-btn-con">
+                <div id="formBtn" class="form-btn"></div>
+            </div>
         </div>
 
 
@@ -81,39 +118,10 @@
              -->
         
 
-<!-- 
-        <button><a href="/logout">Log Out</a></button> 
 
-        <form action="" method="POST">
-                    
-            <div class="form-group">
-                <label for="author_name">Header Image</label>
-                <input type="text" name="image_link" placeholder="https://images.pexels.com/photos/1983917/....." id="image_link" required>
-            </div>
+        <!-- <button><a href="/logout">Log Out</a></button>  -->
 
-            <div class="form-group">
-                <label for="author_name">Name</label>
-                <input type="text" name="author" placeholder="John Smith" id="author_name" required>
-            </div>
 
-            <div class="form-group">
-                <label for="post_content">Tell us about the Project</label>
-                <textarea name="content" id="post_content" placeholder="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium doloribus quae quibusdam." cols="30" rows="10"></textarea>
-            </div>
-
-            <div class="form-group">
-                <label for="post_portfolio">Portolio link</label>
-                <input type="text" name="portfolio" placeholder="https://www.behance.net/JohnSmith" id="post_portfolio" required>
-            </div>
-
-            <div class="form-group">
-                <label for="post_portfolio">Contact</label>
-                <input type="text" name="contact" placeholder="JohnSmith@gmail.com" id="post_" required>
-            </div>
-            
-            <input class="submit-btn" type="submit" id="submit-btn" value="POST">
-    
-        </form> -->
         <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"> </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

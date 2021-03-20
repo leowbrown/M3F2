@@ -3,13 +3,16 @@ $(document).ready(function(){
     
     // nav items
     const navBtn = $('#navBtn');
-    const navCon = $('.nav-container')
+    const navCon = $('.nav-container');
+    const ourWorkFormCon = $('.ourWork-form-con');
+
     
     // btns
     const ourWorkBtn = $('#ourWork');
     const homePageBtn = $('#homePage');
     const homeCtaBtn = $('#homeCta');
-
+    const formBtn = $('#formBtn');
+    
     // pages
     const ourWork = $('#ourWork-container');
     const homePage = $('#home-container');
@@ -18,7 +21,8 @@ $(document).ready(function(){
 
     homePageBtn.hide();
 
-
+    // ourWork.show();
+    // homePage.hide();
     // open - close nav
 
     $('#navBtn').click(function(){
@@ -56,6 +60,14 @@ $(document).ready(function(){
         homePageBtn.hide(300, 'swing');
         ourWorkBtn.show(300, 'swing');
     })
+
+    // opening form/nav
+
+    formBtn.click(function(){
+        ourWorkFormCon.toggleClass('form-con-active', 600, 'swing');
+        formBtn.toggleClass('form-btn-active', 300, 'swing');
+    })
+
    
     
 });

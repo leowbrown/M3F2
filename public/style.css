@@ -20,14 +20,18 @@
     font-weight: 400;
 }
 
+.bodycopy-text{
+    font-size: 14px;
+    font-weight: 300;
+}
 /* Nav and Nav btn */
 
 .nav-btn {
     width: 0; 
     height: 0; 
-    border-top: 25px solid transparent;
-    border-bottom: 25px solid transparent;
-    border-left: 25px solid #fff;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid #000;
     position: absolute;
     z-index: 20;
     top: 50%;
@@ -38,10 +42,9 @@
 
 .nav-active-btn {
     transform: rotate(180deg);
-    border-left: 32px solid #000;
     transition: all .3s ease;
     position: absolute;
-    left: 90%;
+    left: 94.5%;
 }
 
 .nav-container {
@@ -137,8 +140,88 @@
 
 /* Our Work Page */
 
-#ourWork-container {
-    width: 100%;
-    height: 100%;
-    background: red;
+#ourWork-container{
+    padding: 32px;
 }
+
+.ourWork-header {
+    text-align: left;
+    padding-bottom:19px;
+}
+
+.ourWork-subhead {
+    padding-bottom: 19px;
+}
+
+.form-btn-con {
+    width: 100%;
+    height: 32px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-btn {
+    width: 0; 
+    height: 0; 
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #000;
+    transition: all .6s ease;
+}
+
+.ourWork-form-con {
+    display: flex;
+    flex-direction: column;
+    height: 0; 
+    overflow: hidden;
+    transition: all .8s ease;
+}
+
+.form-input, .form-label {
+    width: 100%;
+}
+
+.form-input {
+    line-height: 32px;
+    padding: 0 9px;
+    border: 1px solid #000;
+    height: 32px;
+    border-radius: 4px;
+    outline: none;
+    margin-top: 2px;
+}
+
+.form-input::placeholder{
+    color: #000;
+    font-weight: 400;
+    opacity: 50%;
+}
+
+#post_content {
+    height: 200px;
+    line-height: 19px;
+}
+
+.submit-btn {
+    background: none;
+    border: 1px solid #000;
+    padding: 1px 19px;
+    border-radius: 32px;
+    margin-top: 19px;
+}
+
+
+.form-con-active {
+    height: 680px;
+    padding-bottom: 32px;
+    transition: all .6s ease;
+}
+
+.form-btn-active {
+    transform: rotate(180deg);
+    transition: all .6s ease;
+}
+
