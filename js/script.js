@@ -4,6 +4,7 @@ $(document).ready(function(){
     // nav items
     const navBtn = $('#navBtn');
     const navCon = $('.nav-container');
+    const navList = $('.nav-list-con');
     const shareWorkFormCon = $('.shareWork-form-con');
 
     
@@ -12,15 +13,22 @@ $(document).ready(function(){
     const homePageBtn = $('#homePage');
     const homeCtaBtn = $('#homeCta');
     const formBtn = $('#formBtn');
+    const signupPrompt = $('.signup-prompt');
+    const loginPrompt = $('.login-prompt');
+    const loginSignup = $('#loginSignup');
+    const loginCancel = $('.loginCancel');
     
     // pages
     const shareWork = $('#shareWork-container');
     const homePage = $('#home-container');
-
+    const signUpPage = $('.signup-con');
+    const loginPageCon = $('.login-con');
+    const loginPage = $('#login-page-con')
+    
     // defaults
 
-    homePageBtn.hide();
-    shareWork.hide();
+    loginPage.hide();
+    // shareWork.hide();
     // homePage.hide();
     // open - close nav
 
@@ -67,6 +75,24 @@ $(document).ready(function(){
         formBtn.toggleClass('form-btn-active', 300, 'swing');
     })
 
-   
-    
+    // signup/login switch
+
+    signupPrompt.click(function(){
+        signUpPage.toggleClass('signupActive', 300, 'swing');
+        loginPageCon.toggleClass('loginActive', 300, 'swing');
+    })
+
+    loginPrompt.click(function(){
+        signUpPage.toggleClass('signupActive', 300, 'swing');
+        loginPageCon.toggleClass('loginActive', 300, 'swing');
+    })
+
+    loginSignup.click(function(){
+        loginPage.toggle(300, 'swing');
+        navList.toggle(300, 'swing');
+    })
+    loginCancel.click(function(){
+        loginPage.toggle(300, 'swing');
+        navList.toggle(300, 'swing');
+    })
 });

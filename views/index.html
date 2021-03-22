@@ -18,12 +18,69 @@
             <div class="nav-list-con">
                 <ul class="nav-list">
                   <li id="ourWork" class="subhead-text">Our Work</li>
-                  <li id="homePage" class="subhead-text">Home</li>
-                  <li id="shareWork" class="subhead-text">Upload your Work</li>
-                  <li class="subhead-text">Login or Signup</li>
-                  
+                  {% if user %}
+                    <li id="shareWork" class="subhead-text"><a href="/share">Upload your Work</a></li>
+                  {% else %}
+                  <li id="loginSignup" class="subhead-text">Login or Signup</li>
+                  {% endif %}
                 </ul>
             </div>
+
+            <div id="login-page-con">
+                <!-- login form -->
+    
+                <div class="login-con loginActive">
+                    <form action="/login" method="POST">
+                        <div class="form-group">
+                            <label class="form-label" for="username">Username</label>
+                            <input class="form-input" type="text" placeholder="username" name="username">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="password">Password</label>
+                            <input class="form-input" type="password" id="password" placeholder="***********" name="password">
+                        </div>
+    
+                        <h4 class="bodycopy-text signup-prompt">Dont have an account? Signup here!</h4>
+                        
+                        <div class="btn-con">
+                            <div class="submit-btn loginCancel">Cancel</div>
+                            <button class="submit-btn">Login</button>
+                        </div>
+                    </form>
+                </div>
+            
+            
+    
+                <!-- signup form -->
+                <div class="signup-con">
+                    <form action="/" method="POST">
+                        <div class="form-group">
+                            <label class="form-label" for="username">Username</label>
+                            <input class="form-input" type="text" id="username" placeholder="JohnSmithy" name="username">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="password">Password</label>
+                            <input class="form-input" type="password" id="password" placeholder="**********" name="password">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="firstName">First Name</label>
+                            <input class="form-input" type="text" id="firstName" placeholder="John" name="firstName">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="lastName">Last Name</label>
+                            <input class="form-input" type="text" placeholder="Smith" id="lastName" name="lastName">
+                        </div>
+    
+                        <h4 class="bodycopy-text login-prompt">Already have an Account? Login here!</h4>
+    
+                        <div class="btn-con">
+                            <div class="submit-btn loginCancel">Cancel</div>
+                            <button class="submit-btn">Sign-up</button>
+                        </div>
+                    </form>
+                </div>
+    
+            </div> 
         </div>
 
 
@@ -42,106 +99,7 @@
                 <button id="homeCta"class="cta-btn-md Subhead-text">View our Work!</button>
             </div>
 
-        </div>
-
-        <div id="shareWork-container">
-
-            
-            <h2 class="shareWork-header header-text">20–WDWU–07</h2>
-            <h3 class="shareWork-subhead subhead-text">Share your Work!</h3>
-            <div class="shareWork-form-con">
-                <form action="" method="POST">
-                        
-                    <div class="form-group">
-                        <label for="author_name" class="form-label subhead-text">Header Image</label>
-                        <input type="text" class="form-input bodycopy-text" name="image_link" placeholder="https://images.pexels.com/photos/1983917/....." id="image_link" required>
-                    </div>
-        
-                    <div class="form-group">
-                        <label for="author_name" class="form-labe subhead-text">Name</label>
-                        <input type="text" class="form-input bodycopy-text" name="author" placeholder="John Smith" id="author_name" required>
-                    </div>
-        
-                    <div class="form-group">
-                        <label for="post_portfolio" class="form-label subhead-text">Portolio link</label>
-                        <input type="text" class="form-input bodycopy-text" name="portfolio" placeholder="https://www.behance.net/JohnSmith" id="post_portfolio" required>
-                    </div>
-        
-                    <div class="form-group">
-                        <label for="post_Contact" class="form-label subhead-text">Contact</label>
-                        <input type="text" class="form-input bodycopy-text" name="contact" placeholder="JohnSmith@gmail.com" id="post_" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="post_content" class="form-label subhead-text">Tell us about the Project</label>
-                        <textarea name="content" class="form-input bodycopy-text" id="post_content" placeholder="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium doloribus quae quibusdam." cols="30" rows="10"></textarea>
-                    </div>
-                    <input class="submit-btn subhead-text" type="submit" id="submit-btn" value="Submit">
-            
-                </form>
-            </div>
-            <div class="form-btn-con">
-                <div id="formBtn" class="form-btn"></div>
-            </div>
-
-            <div class="share_posts">
-               
-                {% for post in allpost %}
-                <div class="comment-con-outer">
-                    <div class="comment-con-inner"> 
-                        <div class="post-img-con">
-                            <img src="{{post.image_link |e}}" alt="" class="post-img">
-                        </div>
-                        <span class="post_author subhead-text">{{post.author_name |e}}</span> 
-                        <span class="post_comment bodycopy-text">{{post.content |e}}</span> 
-                        
-                        <div class="contact-con">
-                            <span class="post_comment bodycopy-text">{{post.portfolio |e}}</span> 
-                            <span class="post_comment bodycopy-text">{{post.contact |e}}</span> 
-                        </div>
-                        
-                        <div class="footer-con">
-                            <span class="post_date bodycopy-text">Posted {{post.createdAt | date("d M, Y")}}</span>
-                            <a href="/delete/{{post._id}}" class="btn-link bodycopy-text">Delete</a>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-
-        <div id="login-con">
-            <!-- login form -->
-
-            <div class="login-form">
-                <form action="/login" method="POST">
-                    <label for="username">Username</label>
-                    <input type="text" placeholder="username" name="username">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="***********" name="password">
-                    <button class="submit-btn">Login</button>
-                </form>
-            </div>
-        
-        </div>
-
-        
-        <!-- signup form -->
-        <!-- <form action="/" method="POST">
-            <label for="username">Username</label>
-            <input type="text" id="username" placeholder="JohnSmithy" name="username">
-            <label for="password">Password</label>
-            <input type="password" id="password" placeholder="**********" name="password">
-            <label for="firstName">First Name</label>
-            <input type="text" id="firstName" placeholder="John" name="firstName">
-            <label for="lastName">Last Name</label>
-            <input type="text" placeholder="Smith" id="lastName" name="lastName">
-            <button>Submit</button>
-        </form>
-    
-             -->
-         
-        
+        </div>       
 
 
         <!-- <button><a href="/logout">Log Out</a></button>  -->

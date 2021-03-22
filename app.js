@@ -51,13 +51,19 @@ app.listen(port ,function (err) {
     }else {
         console.log("Server Started At Port " + port);
     } 
-});
+})
+
+
+app.get('/', (req, res) => {
+    res.render('index', { user: req.user });
+})
+
 
 
 
 // work post function
 
-app.post('/', (req, res) => {
+app.post('/share', (req, res) => {
     new Post({
         image_link:req.body.image_link,
         author_name:req.body.author,
@@ -68,24 +74,29 @@ app.post('/', (req, res) => {
     .save()
     .then(result => {
         
-        res.redirect('/');
+        res.redirect('/share');
     })
     .catch(err => {
         if (err) throw err;
     });
 });
 
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) 
+                return next();
+            res.redirect('/');     
+}
 
 
-app.get('/', (req, res) => {
-    // FETCH ALL POSTS FROM DATABASE
+app.get('/share', isLoggedIn, (req, res) => {
+        // FETCH ALL POSTS FROM DATABASE
     Post.find()
     // sort by most recent
     .sort({createdAt: 'descending'})
     .then(result => {
         if(result){
             // RENDERING HOME VIEW WITH ALL POSTS
-            res.render('index',{
+            res.render('share',{
                 
                 allpost:result
                 
@@ -102,12 +113,12 @@ app.get('/delete/:id', (req, res) => {
     Post.findByIdAndDelete(req.params.id)
     
     .then(result => {
-        res.redirect('/');
+        res.redirect('/share');
     })
 
     .catch(err => {
         console.log(err);
-        res.redirect('/');
+        res.redirect('/share');
     })
 });
 
@@ -142,5 +153,6 @@ app.get("/logout",(req,res)=>{  // logout function
     req.logout();
     res.redirect("/");
 });
+
 
 
