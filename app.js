@@ -13,6 +13,7 @@ const LocalStrategy =  require("passport-local");
 
 const passportLocalMongoose =  require("passport-local-mongoose"); ////simplifies the integration between Mongoose and Passport for local authentication
 const twig = require('twig');
+const { post } = require('jquery');
 
 // views
 app.set('view engine', 'html');
@@ -52,9 +53,6 @@ app.listen(port ,function (err) {
     } 
 });
 
-app.get("/", (req,res) =>{
-    res.render("index")
-})
 
 
 // work post function
@@ -69,13 +67,15 @@ app.post('/', (req, res) => {
     })
     .save()
     .then(result => {
-        console.log(result);
+        
         res.redirect('/');
     })
     .catch(err => {
         if (err) throw err;
     });
 });
+
+
 
 app.get('/', (req, res) => {
     // FETCH ALL POSTS FROM DATABASE
@@ -86,8 +86,9 @@ app.get('/', (req, res) => {
         if(result){
             // RENDERING HOME VIEW WITH ALL POSTS
             res.render('index',{
+                
                 allpost:result
-
+                
             });
         }
     })
@@ -96,6 +97,19 @@ app.get('/', (req, res) => {
     }); 
 });
 
+app.get('/delete/:id', (req, res) => {
+    
+    Post.findByIdAndDelete(req.params.id)
+    
+    .then(result => {
+        res.redirect('/');
+    })
+
+    .catch(err => {
+        console.log(err);
+        res.redirect('/');
+    })
+});
 
 // register function
 app.post("/",(req,res)=>{ 
@@ -115,6 +129,7 @@ app.post("/",(req,res)=>{
     })
 
 });
+
 
 // login function
 

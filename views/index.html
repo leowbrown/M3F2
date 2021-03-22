@@ -19,7 +19,7 @@
                 <ul class="nav-list">
                   <li id="ourWork" class="subhead-text">Our Work</li>
                   <li id="homePage" class="subhead-text">Home</li>
-                  <li class="subhead-text">Upload your Work</li>
+                  <li id="shareWork" class="subhead-text">Upload your Work</li>
                   <li class="subhead-text">Login or Signup</li>
                   
                 </ul>
@@ -44,12 +44,12 @@
 
         </div>
 
-        <div id="ourWork-container">
+        <div id="shareWork-container">
 
             
-            <h2 class="ourWork-header header-text">20–WDWU–07</h2>
-            <h3 class="ourWork-subhead subhead-text">Share your Work!</h3>
-            <div class="ourWork-form-con">
+            <h2 class="shareWork-header header-text">20–WDWU–07</h2>
+            <h3 class="shareWork-subhead subhead-text">Share your Work!</h3>
+            <div class="shareWork-form-con">
                 <form action="" method="POST">
                         
                     <div class="form-group">
@@ -83,9 +83,47 @@
             <div class="form-btn-con">
                 <div id="formBtn" class="form-btn"></div>
             </div>
+
+            <div class="share_posts">
+               
+                {% for post in allpost %}
+                <div class="comment-con-outer">
+                    <div class="comment-con-inner"> 
+                        <div class="post-img-con">
+                            <img src="{{post.image_link |e}}" alt="" class="post-img">
+                        </div>
+                        <span class="post_author subhead-text">{{post.author_name |e}}</span> 
+                        <span class="post_comment bodycopy-text">{{post.content |e}}</span> 
+                        
+                        <div class="contact-con">
+                            <span class="post_comment bodycopy-text">{{post.portfolio |e}}</span> 
+                            <span class="post_comment bodycopy-text">{{post.contact |e}}</span> 
+                        </div>
+                        
+                        <div class="footer-con">
+                            <span class="post_date bodycopy-text">Posted {{post.createdAt | date("d M, Y")}}</span>
+                            <a href="/delete/{{post._id}}" class="btn-link bodycopy-text">Delete</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
         </div>
 
+        <div id="login-con">
+            <!-- login form -->
 
+            <div class="login-form">
+                <form action="/login" method="POST">
+                    <label for="username">Username</label>
+                    <input type="text" placeholder="username" name="username">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="***********" name="password">
+                    <button class="submit-btn">Login</button>
+                </form>
+            </div>
+        
+        </div>
 
         
         <!-- signup form -->
@@ -102,20 +140,7 @@
         </form>
     
              -->
-        
-        <!-- login form -->
-        <!-- <div class="container">
-            <div class="row login-form">
-                <form action="/login" method="POST">
-                    <label for="username">Username</label>
-                    <input type="text" placeholder="username" name="username">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="***********" name="password">
-                    <button class="submit-btn col-2">Login</button>
-                </form>
-            </div>
-        </div>
-             -->
+         
         
 
 

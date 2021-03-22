@@ -6,7 +6,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    
+    scroll-behavior: smooth;
 }
 
 .header-text {
@@ -79,7 +79,7 @@
 }
 
 .nav-list-con ul li {
-    padding-top: 19px ;
+    padding: 8.5px 0;
 }
 
 /* Home Page */
@@ -140,16 +140,16 @@
 
 /* Our Work Page */
 
-#ourWork-container{
+#shareWork-container{
     padding: 32px;
 }
 
-.ourWork-header {
+.shareWork-header {
     text-align: left;
     padding-bottom:19px;
 }
 
-.ourWork-subhead {
+.shareWork-subhead {
     padding-bottom: 19px;
 }
 
@@ -161,6 +161,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 12px;
 }
 
 .form-btn {
@@ -172,7 +173,7 @@
     transition: all .6s ease;
 }
 
-.ourWork-form-con {
+.shareWork-form-con {
     display: flex;
     flex-direction: column;
     height: 0; 
@@ -225,3 +226,43 @@
     transition: all .6s ease;
 }
 
+/* post cards */
+
+.comment-con-outer {
+    width: 100%;
+    padding: 32px 0;
+}
+
+.post-img-con {
+    width: 100%;
+    overflow: hidden;
+    height: 300px;
+    margin-bottom: 19px;
+}
+
+.post-img {
+    width: 100%; 
+    object-fit: cover;
+}
+
+.comment-con-inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.post_author {
+    padding-bottom: 14px;
+}
+
+.contact-con {
+    padding: 12px 0;
+    display: flex;
+    justify-content: space-between;
+    font-style: italic;
+}
+
+.footer-con {
+    display: flex;
+    justify-content: space-between;
+    color: #555;
+}

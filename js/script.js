@@ -4,24 +4,23 @@ $(document).ready(function(){
     // nav items
     const navBtn = $('#navBtn');
     const navCon = $('.nav-container');
-    const ourWorkFormCon = $('.ourWork-form-con');
+    const shareWorkFormCon = $('.shareWork-form-con');
 
     
     // btns
-    const ourWorkBtn = $('#ourWork');
+    const shareWorkBtn = $('#shareWork');
     const homePageBtn = $('#homePage');
     const homeCtaBtn = $('#homeCta');
     const formBtn = $('#formBtn');
     
     // pages
-    const ourWork = $('#ourWork-container');
+    const shareWork = $('#shareWork-container');
     const homePage = $('#home-container');
 
     // defaults
 
     homePageBtn.hide();
-
-    // ourWork.show();
+    shareWork.hide();
     // homePage.hide();
     // open - close nav
 
@@ -34,20 +33,20 @@ $(document).ready(function(){
 
   
 
-    ourWorkBtn.click(function(){
+    shareWorkBtn.click(function(){
         navCon.toggleClass('nav-open', 300, 'swing');
         navBtn.toggleClass('nav-active-btn', 300, 'swing');
         homePage.hide(300, 'swing');
-        ourWork.show(300, 'swing');
-        ourWorkBtn.hide(300, 'swing');
+        shareWork.show(300, 'swing');
+        shareWorkBtn.hide(300, 'swing');
         homePageBtn.show(300, 'swing');
 
     });
     
     homeCtaBtn.click(function(){
         homePage.hide(300, 'swing');
-        ourWork.show(300, 'swing');
-        ourWorkBtn.hide(300, 'swing');
+        shareWork.hide(300, 'swing');
+        shareWorkBtn.hide(300, 'swing');
         homePageBtn.show(300, 'swing');
 
     });
@@ -56,15 +55,15 @@ $(document).ready(function(){
         navCon.toggleClass('nav-open', 300, 'swing');
         navBtn.toggleClass('nav-active-btn', 300, 'swing');
         homePage.show(300, 'swing');
-        ourWork.hide(300, 'swing');
+        shareWork.hide(300, 'swing');
         homePageBtn.hide(300, 'swing');
-        ourWorkBtn.show(300, 'swing');
+        shareWorkBtn.show(300, 'swing');
     })
 
     // opening form/nav
 
     formBtn.click(function(){
-        ourWorkFormCon.toggleClass('form-con-active', 600, 'swing');
+        shareWorkFormCon.toggleClass('form-con-active', 600, 'swing');
         formBtn.toggleClass('form-btn-active', 300, 'swing');
     })
 
