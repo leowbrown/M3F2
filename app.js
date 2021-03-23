@@ -108,6 +108,8 @@ app.get('/share', isLoggedIn, (req, res) => {
     }); 
 });
 
+
+
 app.get('/delete/:id', (req, res) => {
     
     Post.findByIdAndDelete(req.params.id)
@@ -156,3 +158,46 @@ app.get("/logout",(req,res)=>{  // logout function
 
 
 
+// EDIT POST
+app.get('/edit/:id', (req, res) => {
+
+    Post.findById(req.params.id)
+    .then(result => {
+        if(result){
+            res.render('edit',{
+                post:result
+            });
+        }
+        else{
+            res.redirect('/');
+        }
+    })
+    .catch(err => {
+        res.redirect('/');
+    });
+});
+
+// UPDATE POST
+app.post('/edit/:id', (req, res) => {
+    Post.findById(req.params.id)
+    .then(result => {
+        if(result){
+            result.image_link = req.body.image_link;
+            result.author_name = req.body.author;
+            result.portfolio = req.body.portfolio;
+            result.contact = req.body.contact;
+            result.content = req.body.content;
+            return result.save();
+        }
+        else{
+            console.log(err);
+            res.redirect('/');
+        }
+    })
+    .then(update => {
+        res.redirect('/share');
+    })
+    .catch(err => {
+        res.redirect('/');
+    });
+});

@@ -17,9 +17,9 @@
             <h2 class="header-text nav-header">20–WDWU–07</h2>
             <div class="nav-list-con">
                 <ul class="nav-list">
-                  <li id="ourWork" class="subhead-text">Our Work</li>
                   {% if user %}
                     <li id="shareWork" class="subhead-text"><a href="/share">Upload your Work</a></li>
+                    <li class="subhead-text"><a href="/logout">Log Out</a></button>
                   {% else %}
                   <li id="loginSignup" class="subhead-text">Login or Signup</li>
                   {% endif %}
@@ -96,13 +96,17 @@
 
             <div class="home-text-con">
                 <h1 class="header-text">20–WDWU–07</h1>
-                <button id="homeCta"class="cta-btn-md Subhead-text">View our Work!</button>
+                {% if user %}
+                <button id="loggedin-cta"class="cta-btn-md Subhead-text"><a href="/share">View our Work!</a></button>
+                {% else %}
+                <button id="homeCta"class="cta-btn-md Subhead-text">Login to View our Work!</button>
+                {% endif %}
             </div>
 
         </div>       
 
 
-        <!-- <button><a href="/logout">Log Out</a></button>  -->
+
 
 
         <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"> </script>

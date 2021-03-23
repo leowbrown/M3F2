@@ -11,12 +11,13 @@ $(document).ready(function(){
     // btns
     const shareWorkBtn = $('#shareWork');
     const homePageBtn = $('#homePage');
-    const homeCtaBtn = $('#homeCta');
+    const homeCtaBtn = $('#loggedin-cta');
     const formBtn = $('#formBtn');
     const signupPrompt = $('.signup-prompt');
     const loginPrompt = $('.login-prompt');
     const loginSignup = $('#loginSignup');
     const loginCancel = $('.loginCancel');
+    const loginCta = $('#homeCta');
     
     // pages
     const shareWork = $('#shareWork-container');
@@ -38,18 +39,6 @@ $(document).ready(function(){
     });
 
     // transition to "Our Work Page"
-
-  
-
-    shareWorkBtn.click(function(){
-        navCon.toggleClass('nav-open', 300, 'swing');
-        navBtn.toggleClass('nav-active-btn', 300, 'swing');
-        homePage.hide(300, 'swing');
-        shareWork.show(300, 'swing');
-        shareWorkBtn.hide(300, 'swing');
-        homePageBtn.show(300, 'swing');
-
-    });
     
     homeCtaBtn.click(function(){
         homePage.hide(300, 'swing');
@@ -58,15 +47,6 @@ $(document).ready(function(){
         homePageBtn.show(300, 'swing');
 
     });
-        
-    homePageBtn.click(function(){
-        navCon.toggleClass('nav-open', 300, 'swing');
-        navBtn.toggleClass('nav-active-btn', 300, 'swing');
-        homePage.show(300, 'swing');
-        shareWork.hide(300, 'swing');
-        homePageBtn.hide(300, 'swing');
-        shareWorkBtn.show(300, 'swing');
-    })
 
     // opening form/nav
 
@@ -92,6 +72,13 @@ $(document).ready(function(){
         navList.toggle(300, 'swing');
     })
     loginCancel.click(function(){
+        loginPage.toggle(300, 'swing');
+        navList.toggle(300, 'swing');
+    })
+
+    loginCta.click(function(){
+        navCon.toggleClass('nav-open', 300, 'swing');
+        navBtn.toggleClass('nav-active-btn', 300, 'swing');
         loginPage.toggle(300, 'swing');
         navList.toggle(300, 'swing');
     })

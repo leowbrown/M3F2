@@ -17,7 +17,7 @@
             <div class="nav-list-con">
                 <ul class="nav-list">
                     <li id="homePage" class="subhead-text"><a href="/">Home</a></li>
-                    <li id="ourWork" class="subhead-text">Our Work</li>
+                    <li class="subhead-text"><a href="/logout">Log Out</a></button>                    
                 </ul>
             </div>
 
@@ -130,12 +130,13 @@
                         <span class="post_comment bodycopy-text">{{post.content |e}}</span> 
                         
                         <div class="contact-con">
-                            <span class="post_comment bodycopy-text">{{post.portfolio |e}}</span> 
+                            <span class="post_comment bodycopy-text"><a href="{{post.portfolio |e}}">Portfolio</a></span> 
                             <span class="post_comment bodycopy-text">{{post.contact |e}}</span> 
                         </div>
                         
                         <div class="footer-con">
                             <span class="post_date bodycopy-text">Posted {{post.createdAt | date("d M, Y")}}</span>
+                            <a href="/edit/{{post._id}}" class="btn-link bodycopy-text">Edit</a>
                             <a href="/delete/{{post._id}}" class="btn-link bodycopy-text">Delete</a>
                         </div>
                     </div>
@@ -144,6 +145,7 @@
             </div>
         </div>
 
+        <!-- code for sharing googledrive imgs https://drive.google.com/uc?export=view&id= -->
 
         <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"> </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

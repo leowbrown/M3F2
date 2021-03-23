@@ -1,0 +1,55 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../style.css">
+        <title>Document</title>
+    </head>
+    <body>  
+        <div class="edit-con">
+            <h2 class="shareWork-header header-text">20–WDWU–07</h2>
+            <h3 class="shareWork-subhead subhead-text">Edit your post.</h3>
+            <div class="shareWork-form-con form-con-active">
+                <form action="" method="POST">
+                        
+                    <div class="form-group">
+                        <label for="author_name" class="form-label subhead-text">Header Image</label>
+                        <input type="text" class="form-input bodycopy-text" name="image_link" placeholder="{{post.image_link | e}}" id="image_link" required>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="author_name" class="form-labe subhead-text">Name</label>
+                        <input type="text" class="form-input bodycopy-text" name="author" placeholder="{{post.author_name | e}}" id="author_name" required>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="post_portfolio" class="form-label subhead-text">Portolio link</label>
+                        <input type="text" class="form-input bodycopy-text" name="portfolio" placeholder="{{post.portfolio | e}}" id="post_portfolio" required>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="post_Contact" class="form-label subhead-text">Contact</label>
+                        <input type="text" class="form-input bodycopy-text" name="contact" placeholder="{{post.contact | e}}" id="post_" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="post_content" class="form-label subhead-text">Tell us about the Project</label>
+                        <textarea name="content" class="form-input bodycopy-text" id="post_content" placeholder="{{post.content | e}}" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="btn-con">
+                        <div class="submit-btn subhead-text"><a href="/share">Cancel</a></div>
+                        <input class="submit-btn subhead-text" type="submit" id="submit-btn" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"> </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="../script.js"></script>
+    </body>
+</html>
