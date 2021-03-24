@@ -12,70 +12,14 @@
     <body>  
 
         <div class="nav-container">
-            <div id="navBtn" class="nav-btn"></div>
+            <div id="navBtn" class="nav-btn dark-nav-btn"></div>
             <h2 class="header-text nav-header">20–WDWU–07</h2>
             <div class="nav-list-con">
                 <ul class="nav-list">
-                    <li id="homePage" class="subhead-text"><a href="/">Home</a></li>
-                    <li class="subhead-text"><a href="/logout">Log Out</a></button>                    
+                    <li id="homePage" class="subhead-text nav-list-item"><a href="/">Home</a></li>
+                    <li class="subhead-text nav-list-item"><a href="/logout">Log Out</a></button>                    
                 </ul>
             </div>
-
-            <div id="login-page-con">
-                <!-- login form -->
-    
-                <div class="login-con loginActive">
-                    <form action="/login" method="POST">
-                        <div class="form-group">
-                            <label class="form-label" for="username">Username</label>
-                            <input class="form-input" type="text" placeholder="username" name="username">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="password">Password</label>
-                            <input class="form-input" type="password" id="password" placeholder="***********" name="password">
-                        </div>
-    
-                        <h4 class="bodycopy-text signup-prompt">Dont have an account? Signup here!</h4>
-                        
-                        <div class="btn-con">
-                            <div class="submit-btn loginCancel">Cancel</div>
-                            <button class="submit-btn">Login</button>
-                        </div>
-                    </form>
-                </div>
-            
-            
-    
-                <!-- signup form -->
-                <div class="signup-con">
-                    <form action="/" method="POST">
-                        <div class="form-group">
-                            <label class="form-label" for="username">Username</label>
-                            <input class="form-input" type="text" id="username" placeholder="JohnSmithy" name="username">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="password">Password</label>
-                            <input class="form-input" type="password" id="password" placeholder="**********" name="password">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="firstName">First Name</label>
-                            <input class="form-input" type="text" id="firstName" placeholder="John" name="firstName">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="lastName">Last Name</label>
-                            <input class="form-input" type="text" placeholder="Smith" id="lastName" name="lastName">
-                        </div>
-    
-                        <h4 class="bodycopy-text login-prompt">Already have an Account? Login here!</h4>
-    
-                        <div class="btn-con">
-                            <div class="submit-btn loginCancel">Cancel</div>
-                            <button class="submit-btn">Login</button>
-                        </div>
-                    </form>
-                </div>
-    
-            </div> 
         </div>
         
        <div id="shareWork-container">
@@ -88,29 +32,29 @@
                         
                     <div class="form-group">
                         <label for="author_name" class="form-label subhead-text">Header Image</label>
-                        <input type="text" class="form-input bodycopy-text" name="image_link" placeholder="https://images.pexels.com/photos/1983917/....." id="image_link" required>
+                        <input type="text" class="form-input share-input bodycopy-text" name="image_link" placeholder="https://images.pexels.com/photos/1983917/....." id="image_link" required>
                     </div>
         
                     <div class="form-group">
                         <label for="author_name" class="form-labe subhead-text">Name</label>
-                        <input type="text" class="form-input bodycopy-text" name="author" placeholder="John Smith" id="author_name" required>
+                        <input type="text" class="form-input share-input bodycopy-text" name="author" placeholder="John Smith" id="author_name" required>
                     </div>
         
                     <div class="form-group">
                         <label for="post_portfolio" class="form-label subhead-text">Portolio link</label>
-                        <input type="text" class="form-input bodycopy-text" name="portfolio" placeholder="https://www.behance.net/JohnSmith" id="post_portfolio" required>
+                        <input type="text" class="form-input share-input bodycopy-text" name="portfolio" placeholder="https://www.behance.net/JohnSmith" id="post_portfolio" required>
                     </div>
         
                     <div class="form-group">
                         <label for="post_Contact" class="form-label subhead-text">Contact</label>
-                        <input type="text" class="form-input bodycopy-text" name="contact" placeholder="JohnSmith@gmail.com" id="post_" required>
+                        <input type="text" class="form-input share-input bodycopy-text" name="contact" placeholder="JohnSmith@gmail.com" id="post_" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="post_content" class="form-label subhead-text">Tell us about the Project</label>
-                        <textarea name="content" class="form-input bodycopy-text" id="post_content" placeholder="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium doloribus quae quibusdam." cols="30" rows="10"></textarea>
+                        <textarea name="content" class="form-input share-input bodycopy-text" id="post_content" placeholder="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium doloribus quae quibusdam." cols="30" rows="10"></textarea>
                     </div>
-                    <input class="submit-btn subhead-text" type="submit" id="submit-btn" value="Submit">
+                    <input class="submit-btn subhead-text share-input share-btn" type="submit" id="submit-btn" value="Submit">
             
                 </form>
             </div>
@@ -130,7 +74,7 @@
                         <span class="post_comment bodycopy-text">{{post.content |e}}</span> 
                         
                         <div class="contact-con">
-                            <span class="post_comment bodycopy-text"><a href="{{post.portfolio |e}}">Portfolio</a></span> 
+                            <span class="post_comment btn-link bodycopy-text"><a href="{{post.portfolio |e}}">Portfolio</a></span> 
                             <span class="post_comment bodycopy-text">{{post.contact |e}}</span> 
                         </div>
                         

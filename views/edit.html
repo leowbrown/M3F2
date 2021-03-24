@@ -9,6 +9,19 @@
         <title>Document</title>
     </head>
     <body>  
+
+
+        <div class="nav-container">
+            <div id="navBtn" class="nav-btn dark-nav-btn"></div>
+            <h2 class="header-text nav-header">20–WDWU–07</h2>
+            <div class="nav-list-con">
+                <ul class="nav-list">
+                    <li id="homePage" class="subhead-text nav-list-item"><a href="/">Home</a></li>
+                    <li class="subhead-text nav-list-item"><a href="/logout">Log Out</a></button>                    
+                </ul>
+            </div>
+        </div>
+        
         <div class="edit-con">
             <h2 class="shareWork-header header-text">20–WDWU–07</h2>
             <h3 class="shareWork-subhead subhead-text">Edit your post.</h3>
@@ -17,30 +30,30 @@
                         
                     <div class="form-group">
                         <label for="author_name" class="form-label subhead-text">Header Image</label>
-                        <input type="text" class="form-input bodycopy-text" name="image_link" placeholder="{{post.image_link | e}}" id="image_link" required>
+                        <input type="text" class="form-input share-input bodycopy-text" name="image_link" placeholder="{{post.image_link | e}}" id="image_link" required>
                     </div>
         
                     <div class="form-group">
                         <label for="author_name" class="form-labe subhead-text">Name</label>
-                        <input type="text" class="form-input bodycopy-text" name="author" placeholder="{{post.author_name | e}}" id="author_name" required>
+                        <input type="text" class="form-input share-input bodycopy-text" name="author" placeholder="{{post.author_name | e}}" id="author_name" required>
                     </div>
         
                     <div class="form-group">
                         <label for="post_portfolio" class="form-label subhead-text">Portolio link</label>
-                        <input type="text" class="form-input bodycopy-text" name="portfolio" placeholder="{{post.portfolio | e}}" id="post_portfolio" required>
+                        <input type="text" class="form-input share-input bodycopy-text" name="portfolio" placeholder="{{post.portfolio | e}}" id="post_portfolio" required>
                     </div>
         
                     <div class="form-group">
                         <label for="post_Contact" class="form-label subhead-text">Contact</label>
-                        <input type="text" class="form-input bodycopy-text" name="contact" placeholder="{{post.contact | e}}" id="post_" required>
+                        <input type="text" class="form-input share-input bodycopy-text" name="contact" placeholder="{{post.contact | e}}" id="post_" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="post_content" class="form-label subhead-text">Tell us about the Project</label>
-                        <textarea name="content" class="form-input bodycopy-text" id="post_content" placeholder="{{post.content | e}}" cols="30" rows="10"></textarea>
+                        <textarea name="content" class="form-input share-input share-ta bodycopy-text" id="post_content" placeholder="{{post.content | e}}" cols="30" rows="10"></textarea>
                     </div>
-                    <div class="btn-con">
-                        <div class="submit-btn subhead-text"><a href="/share">Cancel</a></div>
+                    <div class="btn-con btn-con-edit">
+                        <div class="submit-btn cancel-btn subhead-text"><a href="/share">Cancel</a></div>
                         <input class="submit-btn subhead-text" type="submit" id="submit-btn" value="Submit">
                     </div>
                 </form>
